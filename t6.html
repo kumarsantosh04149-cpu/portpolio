@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Santosh — Web Developer</title>
+    <meta name="description" content="Personal portfolio of Santosh — web developer. Projects, skills, experience and contact." />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+         :root {
+            --bg: #0f1724;
+            --card: rgba(255, 255, 255, 0.05);
+            --muted: rgba(255, 255, 255, 0.7);
+            --accent-a: #7c3aed;
+            /* violet */
+            --accent-b: #06b6d4;
+            /* teal */
+            --glass: rgba(255, 255, 255, 0.03);
+            font-size: 16px;
+        }
+        
+        * {
+            box-sizing: border-box
+        }
+        
+        html,
+        body {
+            height: 100%
+        }
+        
+        body {
+            margin: 0;
+            font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            background: linear-gradient(180deg, var(--bg) 0%, #091027 100%);
+            color: #e6eef8;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            line-height: 1.45;
+            padding: 40px 28px;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto
+        }
+        /* NAV */
+        
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px
+        }
+        
+        .logo .mark {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--accent-a), var(--accent-b));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700
+        }
+        
+        nav {
+            display: flex;
+            gap: 18px;
+            align-items: center
+        }
+        
+        a.nav-link {
+            color: var(--muted);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem
+        }
+        
+        a.nav-link:hover {
+            color: #fff
+        }
+        
+        .cta {
+            background: linear-gradient(90deg, var(--accent-a), var(--accent-b));
+            padding: 10px 14px;
+            border-radius: 10px;
+            color: white;
+            text-decoration: none;
+            font-weight: 700
+        }
+        /* HERO */
+        
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 360px;
+            gap: 36px;
+            align-items: center;
+            margin-top: 32px
+        }
+        
+        .hero-left h1 {
+            font-size: 2.4rem;
+            margin: 0 0 12px
+        }
+        
+        .hero-left p.lead {
+            color: var(--muted);
+            margin: 0 0 18px;
+            font-size: 1.05rem
+        }
+        
+        .skills-inline {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap
+        }
+        
+        .chip {
+            background: var(--glass);
+            padding: 8px 10px;
+            border-radius: 999px;
+            font-weight: 600;
+            font-size: 0.9rem
+        }
+        
+        .card {
+            background: var(--card);
+            padding: 18px;
+            border-radius: 14px;
+            box-shadow: 0 6px 20px rgba(2, 6, 23, 0.6);
+            backdrop-filter: blur(6px)
+        }
+        
+        .profile {
+            width: 100%;
+            max-width: 320px;
+            margin: 0 auto;
+            text-align: center
+        }
+        
+        .profile img {
+            width: 220px;
+            height: 220px;
+            border-radius: 999px;
+            object-fit: cover;
+            border: 6px solid rgba(255, 255, 255, 0.06)
+        }
+        
+        .profile h3 {
+            margin: 12px 0 2px
+        }
+        
+        .profile p {
+            color: var(--muted);
+            margin: 0
+        }
+        /* SECTIONS */
+        
+        section {
+            margin-top: 28px
+        }
+        
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 12px
+        }
+        
+        .section-title h2 {
+            margin: 0
+        }
+        
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px
+        }
+        
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px
+        }
+        
+        .project {
+            overflow: hidden
+        }
+        
+        .project img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 8px
+        }
+        
+        .project h4 {
+            margin: 10px 0 4px
+        }
+        
+        .project p {
+            color: var(--muted);
+            font-size: 0.95rem;
+            margin: 0
+        }
+        /* TIMELINE */
+        
+        .timeline {
+            border-left: 2px solid rgba(255, 255, 255, 0.04);
+            padding-left: 18px
+        }
+        
+        .timeline-item {
+            margin-bottom: 20px
+        }
+        
+        .timeline-item h4 {
+            margin: 0
+        }
+        
+        .timeline-item .meta {
+            color: var(--muted);
+            font-size: 0.9rem
+        }
+        
+        footer {
+            margin-top: 40px;
+            padding: 18px;
+            text-align: center;
+            color: var(--muted)
+        }
+        /* responsive */
+        
+        @media (max-width:920px) {
+            .hero {
+                grid-template-columns: 1fr;
+            }
+            .grid-3 {
+                grid-template-columns: repeat(2, 1fr)
+            }
+            .container {
+                padding: 0 18px
+            }
+        }
+        
+        @media (max-width:560px) {
+            .grid-3 {
+                grid-template-columns: 1fr
+            }
+            nav {
+                display: none
+            }
+            header {
+                align-items: flex-start
+            }
+            body {
+                padding: 20px
+            }
+        }
+        /* small utilities */
+        
+        .muted {
+            color: var(--muted)
+        }
+        
+        .btn-outline {
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 8px 12px;
+            border-radius: 10px;
+            color: var(--muted);
+            text-decoration: none
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <div class="mark">S</div>
+                <div>
+                    <div style="font-weight:700">Santosh</div>
+                    <div style="font-size:0.85rem;color:var(--muted)">Frontend & Full‑Stack Developer</div>
+                </div>
+            </div>
+            <nav>
+                <a class="nav-link" href="#home">Home</a>
+                <a class="nav-link" href="#about">About</a>
+                <a class="nav-link" href="#projects">Projects</a>
+                <a class="nav-link" href="#skills">Skills</a>
+                <a class="nav-link" href="#contact">Contact</a>
+                <a class="cta" href="#contact">Get in touch</a>
+            </nav>
+        </header>
+
+        <main>
+            <section id="home" class="hero">
+                <div class="hero-left">
+                    <h1>Crafting delightful web experiences — <span style="background:linear-gradient(90deg,var(--accent-a),var(--accent-b));-webkit-background-clip:text;color:transparent">fast, accessible, beautiful</span>.</h1>
+                    <p class="lead">I'm Santosh — a web developer who builds responsive, accessible, and high-performance web apps. I love turning ideas into polished products.</p>
+                    <div style="display:flex;gap:12px;margin-top:16px;align-items:center">
+                        <a class="btn-outline" href="#projects">View Projects</a>
+                        <a class="btn-outline" href="#about">About Me</a>
+                    </div>
+
+                    <div style="margin-top:20px">
+                        <strong>Core skills</strong>
+                        <div class="skills-inline" style="margin-top:8px">
+                            <span class="chip">HTML</span>
+                            <span class="chip">CSS / Sass</span>
+                            <span class="chip">JavaScript</span>
+                            <span class="chip">React</span>
+                            <span class="chip">Node.js</span>
+                            <span class="chip">TypeScript</span>
+                        </div>
+                    </div>
+                </div>
+
+                <aside class="card profile" aria-label="Profile card">
+                    <!-- Replace `profile.jpg` with your own photo -->
+                    <img src="profile.jpg" alt="Santosh — Web Developer">
+                    <h3>Santosh</h3>
+                    <p class="muted">Frontend & Full‑Stack Developer</p>
+                    <p class="muted" style="margin-top:10px;font-size:0.95rem">Based in Bengaluru, India · Open to remote opportunities</p>
+                    <div style="display:flex;gap:10px;justify-content:center;margin-top:12px">
+                        <a class="btn-outline" href="#contact">Email</a>
+                        <a class="btn-outline" href="#projects">Portfolio</a>
+                    </div>
+                </aside>
+            </section>
+
+            <section id="about">
+                <div class="section-title">
+                    <h2>About Me</h2>
+                </div>
+                <div style="display:flex;gap:18px;flex-wrap:wrap;margin-top:12px">
+                    <div style="flex:1;min-width:280px" class="card">
+                        <h3 style="margin-top:0">Background</h3>
+                        <p class="muted">I began my journey building static websites and quickly fell in love with UI and front-end engineering. Over the past 4+ years I’ve shipped interfaces used by hundreds of thousands of users, worked with design systems, and helped
+                            teams improve performance and accessibility.</p>
+
+                        <h4 style="margin-top:14px">Education</h4>
+                        <p class="muted">B.Tech in Artificial Intelligence & Machine Learning — R.L. Jalappa Institute of Technology (2022–2026)</p>
+
+
+
+                        <h4 style="margin-top:12px">Professional Experience</h4>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <h4>Frontend Developer — Acme Tech</h4>
+                                <div class="meta">2023 — Present</div>
+                                <p class="muted">Built and maintained the company design system, converted legacy pages to React + TypeScript, improved Lighthouse performance scores from 45 → 88.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h4>Web Developer — Startup Labs</h4>
+                                <div class="meta">2021 — 2023</div>
+                                <p class="muted">Created responsive e-commerce features and automated deployment pipelines. Collaborated closely with designers and backend engineers.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="flex:380px;min-width:280px" class="card">
+                        <h3 style="margin-top:0">What I bring</h3>
+                        <ul style="margin:0;padding-left:18px;color:var(--muted)">
+                            <li>Pixel-perfect UIs with attention to typography & spacing</li>
+                            <li>Clean, testable code and pragmatic architecture</li>
+                            <li>Performance-minded implementations (bundle splitting, lazy loading)</li>
+                            <li>Accessibility-first approach (WCAG basics: ARIA, focus management)</li>
+                        </ul>
+
+                        <h4 style="margin-top:14px">Tools & workflow</h4>
+                        <p class="muted">VSCode · Git & GitHub · Node · ESLint · Prettier · Vite · Netlify / Vercel · Figma</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projects">
+                <div class="section-title">
+                    <h2>Selected Projects</h2>
+                </div>
+                <div style="margin-top:12px" class="grid-3">
+                    <article class="card project">
+                        <img src="project1.jpg" alt="Project 1 screenshot">
+                        <h4>Project One — Design System</h4>
+                        <p class="muted">A reusable component library built with React and Storybook to unify UI patterns across multiple products.</p>
+                        <p style="margin-top:10px"><a class="btn-outline" href="#">Live · GitHub</a></p>
+                    </article>
+
+                    <article class="card project">
+                        <img src="project2.jpg" alt="Project 2 screenshot">
+                        <h4>Project Two — E-commerce UI</h4>
+                        <p class="muted">High-performance product listing and checkout flow with optimistic updates and unit tests.</p>
+                        <p style="margin-top:10px"><a class="btn-outline" href="#">Live · GitHub</a></p>
+                    </article>
+
+                    <article class="card project">
+                        <img src="project3.jpg" alt="Project 3 screenshot">
+                        <h4>Project Three — Analytics Dashboard</h4>
+                        <p class="muted">Interactive charts, server-side pagination, and CSV export for business dashboards.</p>
+                        <p style="margin-top:10px"><a class="btn-outline" href="#">Live · GitHub</a></p>
+                    </article>
+                </div>
+            </section>
+
+            <section id="skills">
+                <div class="section-title">
+                    <h2>Skills & Technologies</h2>
+                </div>
+                <div style="margin-top:12px" class="card">
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px">
+                        <div>
+                            <h4 style="margin-top:0">Frontend</h4>
+                            <p class="muted">HTML, CSS, Sass, JavaScript, TypeScript, React, Redux, Next.js</p>
+
+                            <h4 style="margin-top:12px">Design</h4>
+                            <p class="muted">Figma, responsive layouts, design systems, typography</p>
+                        </div>
+                        <div>
+                            <h4 style="margin-top:0">Backend & DevOps</h4>
+                            <p class="muted">Node.js, Express, PostgreSQL, REST, GraphQL, Docker, Vercel</p>
+
+                            <h4 style="margin-top:12px">Testing & Tools</h4>
+                            <p class="muted">Jest, React Testing Library, ESLint, Prettier, Git</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact">
+                <div class="section-title">
+                    <h2>Contact</h2>
+                </div>
+                <div style="display:flex;gap:18px;flex-wrap:wrap;margin-top:12px">
+                    <div style="flex:1;min-width:280px" class="card">
+                        <h4 style="margin-top:0">Get in touch</h4>
+                        <p class="muted">I'm available for freelance and full-time work. Send me a message and I'll reply within a few days.</p>
+                        <form onsubmit="handleContact(event)" style="margin-top:10px;display:flex;flex-direction:column;gap:10px">
+                            <input id="name" placeholder="Your name" required style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit">
+                            <input id="email" type="email" placeholder="you@example.com" required style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit">
+                            <textarea id="message" rows="4" placeholder="Tell me about your project" required style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit"></textarea>
+                            <button type="submit" class="cta" style="width:fit-content">Send Message</button>
+                        </form>
+                        <p id="formStatus" style="margin-top:10px;color:var(--muted)"></p>
+                    </div>
+
+                    <div style="flex:380px;min-width:280px" class="card">
+                        <h4 style="margin-top:0">Other ways to reach me</h4>
+                        <p class="muted">Email: santu2332@gmail.com</p>
+                        <p class="muted">LinkedIn: linkedin.com/in/santosh</p>
+                        <p class="muted">GitHub: github.com/santosh</p>
+                        <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
+                            <a class="btn-outline" href="#">Resume (PDF)</a>
+                            <a class="btn-outline" href="#">Dribbble</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer>
+            <div class="muted">© <span id="year"></span> Santosh — Built with care. · <a style="color:var(--muted);text-decoration:underline" href="#">Privacy</a></div>
+        </footer>
+    </div>
+
+    <script>
+        // small interactive bits
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        function handleContact(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+            const status = document.getElementById('formStatus');
+            // This form is a UI placeholder. Replace with your backend or use Formspree/Netlify forms.
+            status.textContent = 'Thanks ' + name + ' — your message is ready to be sent (this is a demo).';
+            setTimeout(() => status.textContent = 'If this were connected to a server we would have sent the message.', 3000);
+            e.target.reset();
+        }
+
+        // Smooth scroll for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', (ev) => {
+                const href = a.getAttribute('href');
+                if (href === '#') return;
+                const el = document.querySelector(href);
+                if (el) {
+                    ev.preventDefault();
+                    el.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            })
+        });
+    </script>
+</body>
+
+</html>
